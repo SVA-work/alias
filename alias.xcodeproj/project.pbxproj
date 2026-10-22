@@ -6,10 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		A11000000000000000000002 /* alias/Tests/AppFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11000000000000000000001 /* alias/Tests/AppFlowTests.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		A11000000000000000000007 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,7 +17,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A11000000000000000000001 /* alias/Tests/AppFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alias/Tests/AppFlowTests.swift; sourceTree = SOURCE_ROOT; };
 		A11000000000000000000003 /* AliasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AliasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F920139A30838710003C7038 /* alias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alias.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -30,21 +25,12 @@
 		A11A50003083871000000001 /* Exceptions for "alias" folder in "alias" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-                "README.md",
-                "Server/.env.example",
-                "Server/package.json",
-                "Server/server.mjs",
-                "Server/server.test.mjs",
-                "Defense/Live-demo.md",
-                "Defense/Presentation-guide.md",
-                "Defense/Shlyapa-defense.pptx",
-                "Defense/Validation.md",
-                "Tests/AppFlowTests.swift",
-                "Tests/DomainTests.swift",
-                "Tests/StorageTests.swift",
-                "Tests/ViewModelTests.swift",
-                "Tests/run.sh",
-            );
+				README.md,
+				Server/.env.example,
+				Server/package.json,
+				Server/server.mjs,
+				Server/server.test.mjs,
+			);
 			target = F920139930838710003C7038 /* alias */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -82,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				F920139C30838710003C7038 /* alias */,
-				A11000000000000000000001 /* alias/Tests/AppFlowTests.swift */,
 				F920139B30838710003C7038 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -196,7 +181,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A11000000000000000000002 /* alias/Tests/AppFlowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

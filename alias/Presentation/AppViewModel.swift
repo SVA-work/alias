@@ -21,10 +21,11 @@ final class AppViewModel {
     var generating = false
     var generationError: String?
     var serverAddress: String {
-        didSet { UserDefaults.standard.set(serverAddress, forKey: "generationServer") }
+        didSet { preferences.serverAddress = serverAddress }
     }
     private let repository: any GameRepository
     private let generator: any WordGenerating
+    private let preferences: any AppPreferences
     private var lastTick = Date()
     private var generationTask: Task<Void, Never>?
     var packs: [WordPack] { BuiltinPacks.all + customPacks }
@@ -32,9 +33,9 @@ final class AppViewModel {
         let names = teams.map { $0.name.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() }
         return names.count >= 2 && names.allSatisfy { !$0.isEmpty && $0.count <= 24 } && Set(names).count == names.count
     }
-    init(repository: any GameRepository, generator: any WordGenerating) {
-        self.repository = repository; self.generator = generator
-        serverAddress = UserDefaults.standard.string(forKey: "generationServer") ?? "http://localhost:8787"
+    init(repository: any GameRepository, generator: any WordGenerating, preferences: any AppPreferences) {
+        self.repository = repository; self.generator = generator; self.preferences = preferences
+        serverAddress = preferences.serverAddress
         do {
             customPacks = try repository.loadPacks()
             game = try repository.loadActive()

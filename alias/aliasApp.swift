@@ -31,7 +31,11 @@ struct aliasApp: App {
             configuration = ModelConfiguration()
             #endif
             let container = try ModelContainer(for: StoredDocument.self, configurations: configuration)
-            model = AppViewModel(repository: SwiftDataGameRepository(container: container), generator: RemoteWordGenerator())
+            model = AppViewModel(
+                repository: SwiftDataGameRepository(container: container),
+                generator: RemoteWordGenerator(),
+                preferences: UserDefaultsAppPreferences(defaults: .standard)
+            )
             startupError = nil
         } catch { startupError = error.localizedDescription }
     }
